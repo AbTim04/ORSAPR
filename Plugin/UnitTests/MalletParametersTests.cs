@@ -8,19 +8,20 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
+    //TODO: дописать аттрибут
     public class MalletParametersTests
     {
+        //TODO:
         /// <summary>
         /// Объект класса с параметрами для тестов
         /// </summary>
         private MalletParameters _testMalletParameters;
-
         /// <summary>
         /// Словарь имён и максимальных значений параметров
         /// </summary>
-        private Dictionary<ParameterNames, int>
+        private readonly Dictionary<ParameterNames, int>
             _maxValuesOfParameterDictionary =
-                new Dictionary<ParameterNames, int>()
+                new()
                 {
                     {
                         ParameterNames.HeadLength,

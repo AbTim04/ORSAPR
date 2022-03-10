@@ -32,6 +32,7 @@ namespace PluginUI
         /// Словарь содержащий пары (Текстбоксы, имя параметра)
         /// </summary>
         private Dictionary<TextBox, ParameterNames> _textBoxesDictionary;
+
         /// <summary> 
         /// Конструктор главной формы с необходимыми инициализациями
         /// </summary>
