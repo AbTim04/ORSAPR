@@ -6,6 +6,9 @@ using System.Runtime.InteropServices;
 namespace KompasWrapper
 {
     //TODO: XML
+    /// <summary>
+    /// Класс связи с КОМПАС-3D через API
+    /// </summary>
     public class KompasConnector
     {
         /// <summary>

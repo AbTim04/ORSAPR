@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace PluginUI
         /// <summary>
         /// Объект класса построителя
         /// </summary>
-        private MalletBuilder _waveguideBuilder;
+        private MalletBuilder _malletBuilder;
 
         /// <summary>
         /// Объект класса с параметрами
@@ -33,7 +34,7 @@ namespace PluginUI
         /// </summary>
         private Dictionary<TextBox, ParameterNames> _textBoxesDictionary;
 
-        /// <summary> 
+        /// <summary>
         /// Конструктор главной формы с необходимыми инициализациями
         /// </summary>
         public MainForm()
@@ -47,6 +48,7 @@ namespace PluginUI
                 {HeadLengthTextBox, ParameterNames.HeadLength},
                 {HeadHeightTextBox, ParameterNames.HeadHeight},
                 {HandleDiameterTextBox, ParameterNames.HandleDiameter},
+                {RadiusCrossTieTextBox, ParameterNames.RadiusCrossTie}
             };
 
             foreach (var textBox in _textBoxesDictionary)
@@ -88,11 +90,22 @@ namespace PluginUI
                 {
                     HandleDiameterTextBox.Text =
                         _malletParameters.HandleDiameter.ToString();
+                    HandleDiameterLabel.Text =$"(от " +
+                        $"{MalletParameters.MIN_HANDLE_DIAMETER} до " +
+                        $@"{ _malletParameters.HeadWidth 
+                            - MalletParameters.HANDLE_HEAD_DIFFERENCE} мм)";
+                    HandleDiameterLabel.Refresh();
                 }
                 else if (textBox == HeadLengthTextBox)
                 {
                     HeadHeightTextBox.Text =
-                        _malletParameters.HeadHeight.ToString();
+                        _malletParameters.HeadHeight.ToString(); 
+                    HeadHeightLabel.Text = $"(от " +
+                        $"{MalletParameters.MIN_HEAD_HEIGHT} до " +
+                        $@"{ _malletParameters.HeadLength 
+                            / MalletParameters.HANDLE_LENGTH_HEIGHT_MULTIPLIER}" +
+                        "мм)";
+                    HeadHeightLabel.Refresh();
                 }
             }
             catch (Exception exception)
@@ -111,10 +124,10 @@ namespace PluginUI
         private void BuildButton_Click(object sender, EventArgs e)
         {
             KompasConnector connector = new KompasConnector();
-            _waveguideBuilder =
+            _malletBuilder =
                 new MalletBuilder(_malletParameters, connector);
 
-            _waveguideBuilder.BuildMallet();
+            _malletBuilder.BuildMallet();
         }
     }
 }

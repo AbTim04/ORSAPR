@@ -37,9 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.HeadHeightLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.HandleDiameterLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,6 +48,9 @@
             this.HandleDiameterTextBox = new System.Windows.Forms.TextBox();
             this.HandleHeightTextBox = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.RadiusCrossTieTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MalletParametersPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +66,7 @@
             // 
             // BuildButton
             // 
-            this.BuildButton.Location = new System.Drawing.Point(15, 262);
+            this.BuildButton.Location = new System.Drawing.Point(15, 305);
             this.BuildButton.Name = "BuildButton";
             this.BuildButton.Size = new System.Drawing.Size(200, 23);
             this.BuildButton.TabIndex = 1;
@@ -120,15 +123,15 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Длина бойка киянки(B)";
             // 
-            // label5
+            // HeadHeightLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(12, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "(от 40 до B/2 мм)";
+            this.HeadHeightLabel.AutoSize = true;
+            this.HeadHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeadHeightLabel.Location = new System.Drawing.Point(12, 127);
+            this.HeadHeightLabel.Name = "HeadHeightLabel";
+            this.HeadHeightLabel.Size = new System.Drawing.Size(108, 15);
+            this.HeadHeightLabel.TabIndex = 8;
+            this.HeadHeightLabel.Text = "(от 40 до 100 мм)";
             // 
             // label6
             // 
@@ -140,15 +143,15 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Высота бойка киянки(С)";
             // 
-            // label7
+            // HandleDiameterLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(12, 177);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "(от 20 до A-10 мм)";
+            this.HandleDiameterLabel.AutoSize = true;
+            this.HandleDiameterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HandleDiameterLabel.Location = new System.Drawing.Point(12, 177);
+            this.HandleDiameterLabel.Name = "HandleDiameterLabel";
+            this.HandleDiameterLabel.Size = new System.Drawing.Size(101, 15);
+            this.HandleDiameterLabel.TabIndex = 10;
+            this.HandleDiameterLabel.Text = "(от 20 до 70 мм)";
             // 
             // label8
             // 
@@ -220,20 +223,52 @@
             // 
             this.toolTip.ToolTipTitle = "Ошибка ввода";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(12, 262);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(145, 15);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Размер фаски на бойке";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(12, 277);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "(от 1 до 4мм)";
+            // 
+            // RadiusCrossTieTextBox
+            // 
+            this.RadiusCrossTieTextBox.Location = new System.Drawing.Point(172, 262);
+            this.RadiusCrossTieTextBox.Name = "RadiusCrossTieTextBox";
+            this.RadiusCrossTieTextBox.Size = new System.Drawing.Size(43, 20);
+            this.RadiusCrossTieTextBox.TabIndex = 19;
+            this.RadiusCrossTieTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
+            this.RadiusCrossTieTextBox.Validated += new System.EventHandler(this.TextBox_Validated);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 428);
+            this.Controls.Add(this.RadiusCrossTieTextBox);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.HandleHeightTextBox);
             this.Controls.Add(this.HandleDiameterTextBox);
             this.Controls.Add(this.HeadHeightTextBox);
             this.Controls.Add(this.HeadLengthTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.HandleDiameterLabel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.HeadHeightLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -261,9 +296,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label HeadHeightLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label HandleDiameterLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -272,6 +307,9 @@
         private System.Windows.Forms.TextBox HandleDiameterTextBox;
         private System.Windows.Forms.TextBox HandleHeightTextBox;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox RadiusCrossTieTextBox;
     }
 }
 
