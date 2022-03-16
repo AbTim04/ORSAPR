@@ -90,21 +90,21 @@ namespace PluginUI
                 {
                     HandleDiameterTextBox.Text =
                         _malletParameters.HandleDiameter.ToString();
-                    HandleDiameterLabel.Text =$"(от " +
-                        $"{MalletParameters.MIN_HANDLE_DIAMETER} до " +
+                    HandleDiameterLabel.Text =$"(from " +
+                        $"{MalletParameters.MIN_HANDLE_DIAMETER} to " +
                         $@"{ _malletParameters.HeadWidth 
-                            - MalletParameters.HANDLE_HEAD_DIFFERENCE} мм)";
+                            - MalletParameters.HANDLE_HEAD_DIFFERENCE} mm)";
                     HandleDiameterLabel.Refresh();
                 }
                 else if (textBox == HeadLengthTextBox)
                 {
                     HeadHeightTextBox.Text =
                         _malletParameters.HeadHeight.ToString(); 
-                    HeadHeightLabel.Text = $"(от " +
-                        $"{MalletParameters.MIN_HEAD_HEIGHT} до " +
+                    HeadHeightLabel.Text = $"(from " +
+                        $"{MalletParameters.MIN_HEAD_HEIGHT} to " +
                         $@"{ _malletParameters.HeadLength 
                             / MalletParameters.HANDLE_LENGTH_HEIGHT_MULTIPLIER}" +
-                        "мм)";
+                        "mm)";
                     HeadHeightLabel.Refresh();
                 }
             }
