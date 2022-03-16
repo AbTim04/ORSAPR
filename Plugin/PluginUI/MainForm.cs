@@ -48,7 +48,7 @@ namespace PluginUI
                 {HeadLengthTextBox, ParameterNames.HeadLength},
                 {HeadHeightTextBox, ParameterNames.HeadHeight},
                 {HandleDiameterTextBox, ParameterNames.HandleDiameter},
-                {RadiusCrossTieTextBox, ParameterNames.RadiusCrossTie}
+                {ChamferRadiusTextBox, ParameterNames.ChamferRadius}
             };
 
             foreach (var textBox in _textBoxesDictionary)

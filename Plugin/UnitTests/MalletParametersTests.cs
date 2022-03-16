@@ -46,8 +46,8 @@ namespace UnitTests
                         MalletParameters.MAX_HANDLE_DIAMETER
                     },
                     {
-                        ParameterNames.RadiusCrossTie,
-                        MalletParameters.MAX_RADIUS_CROSS_TIE
+                        ParameterNames.ChamferRadius,
+                        MalletParameters.MAX_CHAMFER_RADIUS
                     },
                 };
 
@@ -115,8 +115,8 @@ namespace UnitTests
                           == MalletParameters.MAX_HEAD_WIDTH
                           && _testMalletParameters.HandleHeight
                           == MalletParameters.MAX_HANDLE_HEIGHT
-                          && _testMalletParameters.RadiusCrossTie
-                          == MalletParameters.MAX_RADIUS_CROSS_TIE,
+                          && _testMalletParameters.ChamferRadius
+                          == MalletParameters.MAX_CHAMFER_RADIUS,
                 "Возникает, если геттер вернул не то значение");
         }
 

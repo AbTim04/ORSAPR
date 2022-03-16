@@ -50,7 +50,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.RadiusCrossTieTextBox = new System.Windows.Forms.TextBox();
+            this.ChamferRadiusTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MalletParametersPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,21 +243,21 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "(from 1 to 4 mm)";
             // 
-            // RadiusCrossTieTextBox
+            // ChamferRadiusTextBox
             // 
-            this.RadiusCrossTieTextBox.Location = new System.Drawing.Point(172, 262);
-            this.RadiusCrossTieTextBox.Name = "RadiusCrossTieTextBox";
-            this.RadiusCrossTieTextBox.Size = new System.Drawing.Size(43, 20);
-            this.RadiusCrossTieTextBox.TabIndex = 19;
-            this.RadiusCrossTieTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
-            this.RadiusCrossTieTextBox.Validated += new System.EventHandler(this.TextBox_Validated);
+            this.ChamferRadiusTextBox.Location = new System.Drawing.Point(172, 262);
+            this.ChamferRadiusTextBox.Name = "ChamferRadiusTextBox";
+            this.ChamferRadiusTextBox.Size = new System.Drawing.Size(43, 20);
+            this.ChamferRadiusTextBox.TabIndex = 19;
+            this.ChamferRadiusTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
+            this.ChamferRadiusTextBox.Validated += new System.EventHandler(this.TextBox_Validated);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 428);
-            this.Controls.Add(this.RadiusCrossTieTextBox);
+            this.Controls.Add(this.ChamferRadiusTextBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.HandleHeightTextBox);
@@ -309,7 +309,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox RadiusCrossTieTextBox;
+        private System.Windows.Forms.TextBox ChamferRadiusTextBox;
     }
 }
 
