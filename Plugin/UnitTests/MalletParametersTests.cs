@@ -8,7 +8,6 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
-    //TODO: дописать аттрибут
     [TestFixture]
     public class MalletParametersTests
     {

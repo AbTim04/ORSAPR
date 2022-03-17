@@ -86,6 +86,7 @@ namespace PluginUI
                 _malletParameters.SetParameterByName(parameterInTextBoxName,
                     int.Parse(textBox.Text));
 
+                //TODO: Опустить в параметры
                 if (textBox == HeadWidthTextBox)
                 {
                     HandleDiameterTextBox.Text =
