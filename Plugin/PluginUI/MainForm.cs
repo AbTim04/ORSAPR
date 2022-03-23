@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Core;
 using KompasWrapper;
@@ -91,22 +87,17 @@ namespace PluginUI
                 {
                     HandleDiameterTextBox.Text =
                         _malletParameters.HandleDiameter.ToString();
-                    HandleDiameterLabel.Text =$"(from " +
-                        $"{MalletParameters.MIN_HANDLE_DIAMETER} to " +
-                        $@"{ _malletParameters.HeadWidth 
-                            - MalletParameters.HANDLE_HEAD_DIFFERENCE} mm)";
+                    HandleDiameterLabel.Text = CollectRangeLabelTextByName(
+                        ParameterNames.HandleDiameter);
                     HandleDiameterLabel.Refresh();
                 }
                 else if (textBox == HeadLengthTextBox)
                 {
                     HeadHeightTextBox.Text =
-                        _malletParameters.HeadHeight.ToString(); 
-                    HeadHeightLabel.Text = $"(from " +
-                        $"{MalletParameters.MIN_HEAD_HEIGHT} to " +
-                        $@"{ _malletParameters.HeadLength 
-                            / MalletParameters.HANDLE_LENGTH_HEIGHT_MULTIPLIER}" +
-                        "mm)";
-                    HeadHeightLabel.Refresh();
+                        _malletParameters.HeadHeight.ToString();
+                    HeadHeightLabel.Text = CollectRangeLabelTextByName(
+                        ParameterNames.HeadHeight);
+                    HandleDiameterLabel.Refresh();
                 }
             }
             catch (Exception exception)
@@ -124,11 +115,26 @@ namespace PluginUI
         /// </summary>
         private void BuildButton_Click(object sender, EventArgs e)
         {
-            KompasConnector connector = new KompasConnector();
+            var connector = new KompasConnector();
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
             _malletBuilder =
                 new MalletBuilder(_malletParameters, connector);
 
             _malletBuilder.BuildMallet();
+        }
+
+        /// <summary>
+        /// Метод объединяющий минимальное и максимальное значение параметра
+        /// в одну строку
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <returns>Строка с диапазоном допустимых значения</returns>
+        private string CollectRangeLabelTextByName(ParameterNames name)
+        {
+            return $"(from "
+                   + $"{_malletParameters.GetParameterMinByName(name)} to "
+                   + $"{_malletParameters.GetParameterMaxByName(name)} mm)";
         }
     }
 }

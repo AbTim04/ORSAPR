@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Core;
 
 //TODO: naming
-namespace KompasPlugin
+namespace Core
 {
     /// <summary>
     /// Шаблонный класс параметра

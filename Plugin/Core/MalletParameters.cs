@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KompasPlugin;
+﻿using System.Collections.Generic;
 
 namespace Core
 {
@@ -218,10 +213,34 @@ namespace Core
         /// </summary>
         /// <param name="name">Имя</param>
         /// <returns>Значение</returns>
-        public double GetParameterValueByName(ParameterNames name)
+        public int GetParameterValueByName(ParameterNames name)
         {
             _parametersDictionary.TryGetValue(name, out var parameter);
             return parameter.Value;
+        }
+
+         /// <summary>
+        /// Метод возвращающий минимальное возможное значение параметра
+        /// по имени
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <returns>Значения минимума</returns>
+        public int GetParameterMinByName(ParameterNames name)
+        {
+            _parametersDictionary.TryGetValue(name, out var parameter);
+            return parameter.Min;
+        }
+
+        /// <summary>
+        /// Метод возвращающий максимальное возможное значение параметра
+        /// по имени
+        /// </summary>
+        /// <param name="name">Имя параметра</param>
+        /// <returns>Значения максимума</returns>
+        public int GetParameterMaxByName(ParameterNames name)
+        {
+            _parametersDictionary.TryGetValue(name, out var parameter);
+            return parameter.Max;
         }
     }
 }
