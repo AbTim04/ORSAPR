@@ -129,9 +129,9 @@
             this.HeadHeightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HeadHeightLabel.Location = new System.Drawing.Point(12, 127);
             this.HeadHeightLabel.Name = "HeadHeightLabel";
-            this.HeadHeightLabel.Size = new System.Drawing.Size(119, 15);
+            this.HeadHeightLabel.Size = new System.Drawing.Size(112, 15);
             this.HeadHeightLabel.TabIndex = 8;
-            this.HeadHeightLabel.Text = "(from 40 to 100 mm)";
+            this.HeadHeightLabel.Text = "(from 40 to 50 mm)";
             // 
             // label6
             // 
@@ -151,7 +151,7 @@
             this.HandleDiameterLabel.Name = "HandleDiameterLabel";
             this.HandleDiameterLabel.Size = new System.Drawing.Size(112, 15);
             this.HandleDiameterLabel.TabIndex = 10;
-            this.HandleDiameterLabel.Text = "(from 20 to 70 mm)";
+            this.HandleDiameterLabel.Text = "(from 20 to 30 mm)";
             // 
             // label8
             // 
