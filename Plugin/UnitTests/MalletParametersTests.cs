@@ -7,7 +7,6 @@ namespace UnitTests
     [TestFixture]
     public class MalletParametersTests
     {
-        //TODO:
         /// <summary>
         /// Свойство возвращающее новый обект класса MalletParameters
         /// </summary>
